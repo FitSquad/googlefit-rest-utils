@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/FitSquad/googlefit-rest-utils/issues"
   },
-  "homepage": "https://github.com/FitSquad/googlefit-rest-utils"
+  "homepage": "https://github.com/FitSquad/googlefit-rest-utils",
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  }
 }
