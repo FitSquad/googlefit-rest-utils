@@ -6,7 +6,7 @@ Utilities for Google Fit REST API
 Install
 -------
 ```
-npm i --save git+https://github.com/FitSquad/googlefit-rest-utils.git
+npm i --save googlefit-rest-utils
 ```
 
 Usage
