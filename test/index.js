@@ -30,4 +30,12 @@ describe('prorate', function() {
   it('should handle segment outside challenge with no duration', function() {
     assert.equal(0, prorate(100, new Date(400), new Date(400), new Date(100), new Date(300)));
   });
+
+  it('should handle segment at beginning of challenge with no duration', function() {
+    assert.equal(100, prorate(100, new Date(400), new Date(400), new Date(100), new Date(400)));
+  });
+
+  it('should handle segment at end of challenge with no duration', function() {
+    assert.equal(100, prorate(100, new Date(100), new Date(100), new Date(100), new Date(400)));
+  });
 });
