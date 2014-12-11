@@ -1,6 +1,6 @@
 {
   "name": "googlefit-rest-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utilities for Google Fit REST API",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "rest",
     "api"
   ],
-  "author": "CHS Labs (http://www.fitsquadapp.com)",
+  "author": "CHS Labs <dev@chslabs.com> (http://www.fitsquadapp.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/FitSquad/googlefit-rest-utils/issues"
