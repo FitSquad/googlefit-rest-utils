@@ -13,7 +13,6 @@ Usage
 -----
 ```javascript
   var gFitUtils = require('googlefit-rest-utils');
-  
   var distanceByBucket = gFitUtils.bucketByActivityType(distanceData, activityData);
 ```
 
@@ -25,5 +24,8 @@ this should yield result
       ....
    }
 ```
-  
+
+About us
+--------
+http://www.fitsquadapp.com
   
