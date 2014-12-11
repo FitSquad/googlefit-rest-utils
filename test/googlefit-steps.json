@@ -1,0 +1,55 @@
+{
+ "minStartTimeNs": "10000000",
+ "maxEndTimeNs": "90000000",
+ "dataSourceId": "derived:com.google.step_count.delta:com.google.android.gms:estimated_steps",
+ "point": [
+  {
+   "startTimeNanos": "10000000",
+   "endTimeNanos": "20000000",
+   "dataTypeName": "com.google.step_count.delta",
+   "originDataSourceId": "derived:com.google.step_count.cumulative:com.google.android.gms:samsung:Galaxy Nexus:d2cf1a8:soft_step_counter",
+   "value": [
+    {
+     "intVal": 100
+    }
+   ],
+   "modifiedTimeMillis": "1417886981361"
+  },
+  {
+   "startTimeNanos": "25000000",
+   "endTimeNanos": "38000000",
+   "dataTypeName": "com.google.step_count.delta",
+   "originDataSourceId": "derived:com.google.step_count.cumulative:com.google.android.gms:samsung:Galaxy Nexus:d2cf1a8:soft_step_counter",
+   "value": [
+    {
+     "intVal": 100
+    }
+   ],
+   "modifiedTimeMillis": "1417886981361"
+  },
+  {
+   "startTimeNanos": "51000000",
+   "endTimeNanos": "59000000",
+   "dataTypeName": "com.google.step_count.delta",
+   "originDataSourceId": "derived:com.google.step_count.cumulative:com.google.android.gms:samsung:Galaxy Nexus:d2cf1a8:soft_step_counter",
+   "value": [
+    {
+     "intVal": 100
+    }
+   ],
+   "modifiedTimeMillis": "1417886981361"
+  },
+  {
+   "startTimeNanos": "65000000",
+   "endTimeNanos": "78000000",
+   "dataTypeName": "com.google.step_count.delta",
+   "originDataSourceId": "derived:com.google.step_count.cumulative:com.google.android.gms:samsung:Galaxy Nexus:d2cf1a8:soft_step_counter",
+   "value": [
+    {
+     "intVal": 100
+    }
+   ],
+   "modifiedTimeMillis": "1417886981361"
+  }
+ ]
+}
