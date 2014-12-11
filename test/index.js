@@ -2,10 +2,18 @@ var assert = require('assert');
 var gfitUtils = require('..');
 
 describe('bucketByActivityType', function() {
-  var bucketByActivityType = gfitUtils.bucketByActivityType;
+  /*
+                 1   2   3   4   5   6   7   8   9
+        time     |---|---|---|---|---|---|---|---|
+        activity |---7---|---1---|       |-7-|-0-|
+        steps    |---| |----|     |-|  |----|
+        distance |---| |----|    |-|       |----|
+  */
 
-  it('should bucket distance segments by activity type', function() {
-    var activityData = require('./googlefit-activity.json');
+  var bucketByActivityType = gfitUtils.bucketByActivityType;
+  var activityData = require('./googlefit-activity.json');
+
+  it('should bucket floating point segments by activity type', function() {
     var distanceData = require('./googlefit-distance.json');
     var expected = {
       '0': 64.28571428571429,
@@ -13,6 +21,15 @@ describe('bucketByActivityType', function() {
       '7': 174.17582417582418
     };
     assert.deepEqual(bucketByActivityType(distanceData.point, activityData.point), expected);
+  });
+
+  it('should bucket integer segments by activity type', function() {
+    var stepData = require('./googlefit-steps.json');
+    var expected = {
+      '1': 61.53846153846154,
+      '7': 200
+    };
+    assert.deepEqual(bucketByActivityType(stepData.point, activityData.point), expected);
   });
 });
 

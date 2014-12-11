@@ -2,33 +2,33 @@ function millis(nanoString) {
   return parseInt(nanoString.substr(0, nanoString.length - 6));
 }
 
-function bucketByActivityType(distanceSegments, activitySegments) {
-  var distanceIdx = 0;
+function bucketByActivityType(dataPoints, activitySegments) {
+  var dataIdx = 0;
   return activitySegments.reduce(function(results, activitySegment, activityIdx) {
-    var proratedDistance, distanceSegment, distanceStart, distanceEnd;
+    var proratedValue, dataPoint, dataStart, dataEnd;
     var activityType = activitySegment.value[0].intVal;
     var activityStart = millis(activitySegment.startTimeNanos);
     var activityEnd = millis(activitySegment.endTimeNanos);
     while (
-      (distanceSegment = distanceSegments[distanceIdx]) &&
-      (distanceStart = millis(distanceSegment.startTimeNanos)) &&
-      (distanceEnd = millis(distanceSegment.endTimeNanos)) &&
-      (distanceEnd < activityStart)
+      (dataPoint = dataPoints[dataIdx]) &&
+      (dataStart = millis(dataPoint.startTimeNanos)) &&
+      (dataEnd = millis(dataPoint.endTimeNanos)) &&
+      (dataEnd < activityStart)
     ) {
-      distanceIdx++;
+      dataIdx++;
     }
-    if (distanceEnd <= activityEnd || distanceStart <= activityEnd) {
+    if (dataEnd <= activityEnd || dataStart <= activityEnd) {
       while (
-        (distanceSegment = distanceSegments[distanceIdx]) &&
-        (distanceStart = millis(distanceSegment.startTimeNanos)) &&
-        (distanceEnd = millis(distanceSegment.endTimeNanos)) &&
-        (distance = distanceSegment.value[0].fpVal) &&
-        (proratedDistance = prorate(distance, distanceStart, distanceEnd, activityStart, activityEnd))
+        (dataPoint = dataPoints[dataIdx]) &&
+        (dataStart = millis(dataPoint.startTimeNanos)) &&
+        (dataEnd = millis(dataPoint.endTimeNanos)) &&
+        (value = dataPoint.value[0].fpVal || dataPoint.value[0].intVal) &&
+        (proratedValue = prorate(value, dataStart, dataEnd, activityStart, activityEnd))
       ) {
-        results[activityType] = (results[activityType] || 0.0) + proratedDistance;
-        distanceIdx++;
+        results[activityType] = (results[activityType] || 0.0) + proratedValue;
+        dataIdx++;
       }
-      distanceIdx--;
+      dataIdx--;
     }
     return results;
   }, {});
