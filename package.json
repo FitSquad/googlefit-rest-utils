@@ -1,6 +1,6 @@
 {
   "name": "googlefit-rest-utils",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Utilities for Google Fit REST API",
   "main": "index.js",
   "scripts": {
