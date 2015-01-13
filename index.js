@@ -9,6 +9,8 @@ function bucketByActivityType(dataPoints, activitySegments) {
     var activityType = activitySegment.value[0].intVal;
     var activityStart = millis(activitySegment.startTimeNanos);
     var activityEnd = millis(activitySegment.endTimeNanos);
+    var allocated = false;
+
     while (
       (dataPoint = dataPoints[dataIdx]) &&
       (dataStart = millis(dataPoint.startTimeNanos)) &&
@@ -17,19 +19,23 @@ function bucketByActivityType(dataPoints, activitySegments) {
     ) {
       dataIdx++;
     }
-    if (dataEnd <= activityEnd || dataStart <= activityEnd) {
-      while (
-        (dataPoint = dataPoints[dataIdx]) &&
-        (dataStart = millis(dataPoint.startTimeNanos)) &&
-        (dataEnd = millis(dataPoint.endTimeNanos)) &&
-        (value = dataPoint.value[0].fpVal || dataPoint.value[0].intVal) &&
-        (proratedValue = prorate(value, dataStart, dataEnd, activityStart, activityEnd))
-      ) {
-        results[activityType] = (results[activityType] || 0.0) + proratedValue;
-        dataIdx++;
-      }
+
+    while (
+      (dataPoint = dataPoints[dataIdx]) &&
+      (dataStart = millis(dataPoint.startTimeNanos)) &&
+      (dataEnd = millis(dataPoint.endTimeNanos)) &&
+      (value = dataPoint.value[0].fpVal || dataPoint.value[0].intVal) &&
+      (proratedValue = prorate(value, dataStart, dataEnd, activityStart, activityEnd))
+    ) {
+      results[activityType] = (results[activityType] || 0.0) + proratedValue;
+      allocated = true;
+      dataIdx++;
+    }
+
+    if (allocated) {
       dataIdx--;
     }
+
     return results;
   }, {});
 }

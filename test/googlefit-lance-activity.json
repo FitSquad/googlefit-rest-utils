@@ -1,0 +1,79 @@
+{
+ "minStartTimeNs": "10000000",
+ "maxEndTimeNs": "90000000",
+ "dataSourceId": "derived:com.google.activity.segment:com.google.android.gms:merge_activity_segments",
+ "point": [
+  {
+   "startTimeNanos": "10000000",
+   "endTimeNanos": "20000000",
+   "dataTypeName": "com.google.activity.segment",
+   "originDataSourceId": "derived:com.google.activity.sample:com.google.android.gms:samsung:Galaxy Nexus:d2cf1a8:detailed",
+   "value": [
+    {
+     "intVal": 8
+    }
+   ],
+   "modifiedTimeMillis": "1417886979478"
+  },
+  {
+   "startTimeNanos": "20000000",
+   "endTimeNanos": "30000000",
+   "dataTypeName": "com.google.activity.segment",
+   "originDataSourceId": "derived:com.google.activity.sample:com.google.android.gms:samsung:Galaxy Nexus:d2cf1a8:detailed",
+   "value": [
+    {
+     "intVal": 8
+    }
+   ],
+   "modifiedTimeMillis": "1417886979478"
+  },
+  {
+   "startTimeNanos": "30000000",
+   "endTimeNanos": "40000000",
+   "dataTypeName": "com.google.activity.segment",
+   "originDataSourceId": "derived:com.google.activity.sample:com.google.android.gms:samsung:Galaxy Nexus:d2cf1a8:detailed",
+   "value": [
+    {
+     "intVal": 0
+    }
+   ],
+   "modifiedTimeMillis": "1417886979478"
+  },
+  {
+   "startTimeNanos": "40000000",
+   "endTimeNanos": "50000000",
+   "dataTypeName": "com.google.activity.segment",
+   "originDataSourceId": "derived:com.google.activity.sample:com.google.android.gms:samsung:Galaxy Nexus:d2cf1a8:detailed",
+   "value": [
+    {
+     "intVal": 1
+    }
+   ],
+   "modifiedTimeMillis": "1417891119986"
+  },
+  {
+   "startTimeNanos": "50000000",
+   "endTimeNanos": "70000000",
+   "dataTypeName": "com.google.activity.segment",
+   "originDataSourceId": "derived:com.google.activity.sample:com.google.android.gms:samsung:Galaxy Nexus:d2cf1a8:detailed",
+   "value": [
+    {
+     "intVal": 1
+    }
+   ],
+   "modifiedTimeMillis": "1417891119986"
+  },
+  {
+   "startTimeNanos": "70000000",
+   "endTimeNanos": "80000000",
+   "dataTypeName": "com.google.activity.segment",
+   "originDataSourceId": "derived:com.google.activity.sample:com.google.android.gms:samsung:Galaxy Nexus:d2cf1a8:detailed",
+   "value": [
+    {
+     "intVal": 0
+    }
+   ],
+   "modifiedTimeMillis": "1417891119986"
+  }
+ ]
+}

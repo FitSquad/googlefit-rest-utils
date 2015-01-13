@@ -31,6 +31,16 @@ describe('bucketByActivityType', function() {
     };
     assert.deepEqual(bucketByActivityType(stepData.point, activityData.point), expected);
   });
+
+  it('should handle touching segments', function() {
+    var distanceData = require('./googlefit-lance-distance.json');
+    var lanceActivity = require('./googlefit-lance-activity.json');
+    var expected = {
+      '1': 400,
+      '8': 100
+    };
+    assert.deepEqual(bucketByActivityType(distanceData.point, lanceActivity.point), expected);
+  });
 });
 
 describe('prorate', function() {
@@ -40,35 +50,35 @@ describe('prorate', function() {
     assert.equal(prorate(100, new Date(100), new Date(200), new Date(300), new Date(400)), 0);
   });
 
-  it('should handle segment fully within challenge', function() {
+  it('should handle segment fully within activity', function() {
     assert.equal(prorate(100, new Date(200), new Date(300), new Date(100), new Date(400)), 100);
   });
 
-  it('should handle challenge fully within segment', function() {
+  it('should handle activity fully within segment', function() {
     assert.equal(prorate(100, new Date(100), new Date(400), new Date(200), new Date(300)), 100/3);
   });
 
-  it('should handle segment start within challenge', function() {
+  it('should handle segment start within activity', function() {
     assert.equal(prorate(100, new Date(200), new Date(400), new Date(100), new Date(300)), 50);
   });
 
-  it('should handle segment end within challenge', function() {
+  it('should handle segment end within activity', function() {
     assert.equal(prorate(100, new Date(100), new Date(300), new Date(200), new Date(400)), 50);
   });
 
-  it('should handle segment within challenge has no duration', function() {
+  it('should handle segment within activity has no duration', function() {
     assert.equal(prorate(100, new Date(200), new Date(200), new Date(100), new Date(400)), 100);
   });
 
-  it('should handle segment outside challenge with no duration', function() {
+  it('should handle segment outside activity with no duration', function() {
     assert.equal(prorate(100, new Date(400), new Date(400), new Date(100), new Date(300)), 0);
   });
 
-  it('should handle segment at beginning of challenge with no duration', function() {
+  it('should handle instant segment at end of activity', function() {
     assert.equal(prorate(100, new Date(400), new Date(400), new Date(100), new Date(400)), 100);
   });
 
-  it('should handle segment at end of challenge with no duration', function() {
+  it('should handle instant segment at beginning of activity', function() {
     assert.equal(prorate(100, new Date(100), new Date(100), new Date(100), new Date(400)), 100);
   });
 });

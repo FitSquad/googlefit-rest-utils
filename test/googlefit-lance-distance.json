@@ -1,0 +1,31 @@
+{
+ "minStartTimeNs": "10000000",
+ "maxEndTimeNs": "90000000",
+ "dataSourceId": "derived:com.google.distance.delta:com.google.android.gms:pruned_distance",
+ "point": [
+  {
+   "startTimeNanos": "20000000",
+   "endTimeNanos": "30000000",
+   "dataTypeName": "com.google.distance.delta",
+   "originDataSourceId": "derived:com.google.distance.delta:com.google.android.gms:samsung:Galaxy Nexus:d2cf1a8:",
+   "value": [
+    {
+     "fpVal": 100.0
+    }
+   ],
+   "modifiedTimeMillis": "1417886980311"
+  },
+  {
+   "startTimeNanos": "50000000",
+   "endTimeNanos": "70000000",
+   "dataTypeName": "com.google.distance.delta",
+   "originDataSourceId": "derived:com.google.distance.delta:com.google.android.gms:samsung:Galaxy Nexus:d2cf1a8:",
+   "value": [
+    {
+     "fpVal": 400.0
+    }
+   ],
+   "modifiedTimeMillis": "1417886980311"
+  }
+ ]
+}
